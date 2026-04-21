@@ -1,71 +1,19 @@
-# Plugin Documentation
+# KVK Handelsregister plugin
 
-<!-- Use this page to document your plugin. Below is a suggested structure. -->
+For retrieving data from Kvk handelsregister (https://developers.kvk.nl/documentation).
 
-## Overview
+## Capabilities
 
-This is a sample plugin demonstrating an API call action. It fetches data from a time API endpoint.
+This plugin can access the Kvk Handelsregister API
 
-## Dependencies
+## Kvk plugin
 
-### Backend
+This module includes both frontend and backend components as part of the Kvk Handelsregister plugin, intended for use in the GZAC implementation. 
+It also includes a Business Model Process as example to filter vestigingen based on zip code range   
 
-```kotlin
-dependencies {
-    implementation("com.ritense.valtimoplugins:sample-plugin:0.0.1")
-}
-```
+## Source code
 
-### Frontend
+The source code is split up into 2 modules:
 
-```json
-{
-  "dependencies": {
-    "@valtimo-plugins/sample-plugin": "0.0.1"
-  }
-}
-```
-
-In your `app.module.ts`:
-
-```typescript
-import {
-    SamplePluginModule, samplePluginSpecification,
-} from '@valtimo-plugins/sample-plugin';
-
-@NgModule({
-    imports: [
-        SamplePluginModule,
-    ],
-    providers: [
-        {
-            provide: PLUGIN_TOKEN,
-            useValue: [
-                samplePluginSpecification,
-            ]
-        }
-    ]
-})
-```
-
-## Configuration
-
-List the plugin configuration properties and how to set them.
-
-| Property | Type   | Required | Description                          |
-|----------|--------|----------|--------------------------------------|
-| apiUrl   | string | Yes      | The URL of the time API to call      |
-
-## Actions
-
-### Time API test action
-
-Sends a GET request to the configured API URL and returns the timezone response.
-
-| Parameter | Type | Required | Description |
-|-----------|------|----------|-------------|
-|           |      |          |             |
-
-## Usage
-
-Explain how to use the plugin in a process, with examples if applicable.
+1. [Frontend](../../frontend/projects/valtimo-plugins/kvk-handelsregister)
+2. [Backend](./)
