@@ -1,9 +1,9 @@
 {
-  "extends": "../../../tsconfig.json",
+  "extends": "../../tsconfig.json",
   "compilerOptions": {
     "resolveJsonModule": true,
     "declarationMap": true,
-    "outDir": "../../../out-tsc/lib",
+    "outDir": "../../out-tsc/lib",
     "target": "es2022",
     "declaration": true,
     "inlineSources": true,
