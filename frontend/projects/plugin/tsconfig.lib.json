@@ -1,18 +1,24 @@
-/* To learn more about this file see: https://angular.io/config/tsconfig. */
 {
-    "extends": "../../tsconfig.json",
-    "compilerOptions": {
-        "outDir": "../../out-tsc/lib",
-        "declaration": true,
-        "declarationMap": true,
-        "inlineSources": true,
-        "types": []
-    },
-    "angularCompilerOptions": {
-        "compilationMode": "partial"
-    },
-    "exclude": [
-        "src/test.ts",
-        "**/*.spec.ts"
-    ]
+  "extends": "../../../tsconfig.json",
+  "compilerOptions": {
+    "resolveJsonModule": true,
+    "declarationMap": true,
+    "outDir": "../../../out-tsc/lib",
+    "target": "es2022",
+    "declaration": true,
+    "inlineSources": true,
+    "types": [],
+    "lib": ["dom", "es2018"],
+    "allowSyntheticDefaultImports": true
+  },
+  "angularCompilerOptions": {
+    "skipTemplateCodegen": true,
+    "compilationMode": "partial",
+    "strictMetadataEmit": true,
+    "fullTemplateTypeCheck": true,
+    "strictInjectionParameters": true,
+    "enableResourceInlining": true,
+    "allowSyntheticDefaultImports": true
+  },
+  "exclude": ["src/test.ts", "**/*.spec.ts"]
 }
