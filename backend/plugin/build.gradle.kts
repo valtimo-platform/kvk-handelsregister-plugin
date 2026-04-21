@@ -14,6 +14,16 @@
  * limitations under the License.
  */
 
+val auth0JavaJwtVersion: String by project
+val httpclient5Version: String by project
+val httpcoreVersion: String by project
+val jacksonVersion: String by project
+val jsonPathVersion: String by project
+val junitJupiterVersion: String by project
+val kotlinLoggingVersion: String by project
+val mockitoKotlinVersion: String by project
+val okhttpVersion: String by project
+
 dockerCompose {
     setProjectName("kvk-handelsregister")
     isRequiredBy(project.tasks.integrationTesting)
@@ -28,34 +38,34 @@ dependencies {
     implementation("com.ritense.valtimo:core")
     implementation("com.ritense.valtimo:plugin-valtimo")
     implementation("com.ritense.valtimo:value-resolver")
-    implementation("com.ritense.valtimo:document")
+    implementation("com.ritense.valtimo:case")
 
     implementation("org.springframework.boot:spring-boot-starter-webflux")
 
-    implementation("io.github.oshai:kotlin-logging-jvm:7.0.3")
+    implementation("io.github.oshai:kotlin-logging-jvm:$kotlinLoggingVersion")
     implementation("com.fasterxml.jackson.core:jackson-databind")
     implementation("com.fasterxml.jackson.core:jackson-annotations")
     implementation("com.fasterxml.jackson.core:jackson-core")
 
     // Apache deps
-    implementation("org.apache.httpcomponents.client5:httpclient5:5.4")
-    implementation("org.apache.httpcomponents:httpcore:4.4.15")
+    implementation("org.apache.httpcomponents.client5:httpclient5:$httpclient5Version")
+    implementation("org.apache.httpcomponents:httpcore:$httpcoreVersion")
 
-    implementation("com.auth0:java-jwt:4.4.0")
+    implementation("com.auth0:java-jwt:$auth0JavaJwtVersion")
 
     // Testing
-    testImplementation("com.fasterxml.jackson.core:jackson-databind:2.14.2")
-    testImplementation("com.fasterxml.jackson.core:jackson-annotations:2.14.2")
-    testImplementation("com.fasterxml.jackson.core:jackson-core:2.14.2")
-    testImplementation("org.junit.jupiter:junit-jupiter-migrationsupport:5.9.1")
+    testImplementation("com.fasterxml.jackson.core:jackson-databind:$jacksonVersion")
+    testImplementation("com.fasterxml.jackson.core:jackson-annotations:$jacksonVersion")
+    testImplementation("com.fasterxml.jackson.core:jackson-core:$jacksonVersion")
+    testImplementation("org.junit.jupiter:junit-jupiter-migrationsupport:$junitJupiterVersion")
     testImplementation("org.assertj:assertj-core")
     testImplementation("org.mockito:mockito-core")
     testImplementation("org.hamcrest:hamcrest-library")
-    testImplementation("com.jayway.jsonpath:json-path:2.7.0")
-    testImplementation("org.mockito.kotlin:mockito-kotlin:4.1.0")
+    testImplementation("com.jayway.jsonpath:json-path:$jsonPathVersion")
+    testImplementation("org.mockito.kotlin:mockito-kotlin:$mockitoKotlinVersion")
 
-    testImplementation("com.squareup.okhttp3:mockwebserver:4.10.0")
-    testImplementation("com.squareup.okhttp3:okhttp:4.10.0")
+    testImplementation("com.squareup.okhttp3:mockwebserver:$okhttpVersion")
+    testImplementation("com.squareup.okhttp3:okhttp:$okhttpVersion")
 
     testImplementation("org.jetbrains.kotlin:kotlin-test")
     testImplementation("org.jetbrains.kotlin:kotlin-test-junit5")
