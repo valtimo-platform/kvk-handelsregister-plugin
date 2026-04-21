@@ -1,5 +1,5 @@
 {
-    "name": "plugin-sandbox",
+    "name": "kvk-handelsregister-plugin",
     "version": "0.0.0",
     "engines": {
         "node": ">=20.0.0 <23.0.0"

@@ -3,7 +3,7 @@
     "version": 1,
     "newProjectRoot": "projects",
     "projects": {
-        "plugin-sandbox": {
+        "kvk-handelsregister-plugin": {
             "root": "",
             "sourceRoot": "src",
             "projectType": "application",
@@ -18,7 +18,7 @@
                     "builder": "@angular-devkit/build-angular:browser",
                     "options": {
                         "aot": false,
-                        "outputPath": "deployment/plugin-sandbox",
+                        "outputPath": "deployment/kvk-handelsregister-plugin",
                         "index": "src/index.html",
                         "main": "src/main.ts",
                         "polyfills": "src/polyfills.ts",
@@ -107,13 +107,13 @@
                 "serve": {
                     "builder": "@angular-devkit/build-angular:dev-server",
                     "options": {
-                        "buildTarget": "plugin-sandbox:build"
+                        "buildTarget": "kvk-handelsregister-plugin:build"
                     }
                 },
                 "extract-i18n": {
                     "builder": "@angular-devkit/build-angular:extract-i18n",
                     "options": {
-                        "buildTarget": "plugin-sandbox:build"
+                        "buildTarget": "kvk-handelsregister-plugin:build"
                     }
                 },
                 "test": {
