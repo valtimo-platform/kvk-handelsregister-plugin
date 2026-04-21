@@ -6,17 +6,46 @@
 - Node.js >= 20
 - Docker & Docker Compose
 
-## Backend
+## Running the application
 
-1. Copy `.env.properties.example` to `.env.properties` and fill in the required values
-2. Start the dependencies: `docker compose up -d` (from `backend/app/`)
-3. Run the application: `./gradlew :backend:app:bootRun`
+All commands below should be run from the **project root** directory.
 
-## Frontend
+### 1. Configure environment
 
-1. Install dependencies: `cd frontend && npm install`
-2. Build the plugin library: `npm run libs-build-all`
-3. Start the dev server: `npm run start`
+Copy `.env.properties.example` to `.env.properties` and fill in the required values.
+
+### 2. Start Docker dependencies
+
+Make sure Docker is running, then start the required services:
+
+```shell
+./gradlew :backend:app:composeUp
+```
+
+### 3. Start the backend
+
+```shell
+./gradlew :backend:app:bootRun
+```
+
+### 4. Start the frontend
+
+```shell
+cd frontend
+npm install
+npm run libs-build-all
+npm start
+```
+
+### Keycloak users
+
+The application has a few test users that are preconfigured.
+
+| Name         | Role           | Username  | Password  |
+|--------------|----------------|-----------|-----------|
+| James Vance  | ROLE_USER      | user      | user      |
+| Asha Miller  | ROLE_ADMIN     | admin     | admin     |
+| Morgan Finch | ROLE_DEVELOPER | developer | developer |
 
 ## Plugin development
 
