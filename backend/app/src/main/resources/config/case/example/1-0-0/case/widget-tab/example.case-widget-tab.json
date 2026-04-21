@@ -5,7 +5,7 @@
             {
                 "type": "fields",
                 "key": "process-variable-result",
-                "title": "Sample Plugin Result",
+                "title": "Kvk Handelsregister plugin Result",
                 "width": 2,
                 "highContrast": true,
                 "properties": {

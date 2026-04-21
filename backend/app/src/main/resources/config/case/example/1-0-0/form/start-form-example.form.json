@@ -6,7 +6,7 @@
             "type": "htmlelement",
             "input": false,
             "label": "Instructions",
-            "content": "Start a new example case. The sample plugin will call a Time API during execution.",
+            "content": "Start a new example case. The Kvk Handelsregister plugin will call a Time API during execution.",
             "tableView": false,
             "refreshOnChange": false
         },

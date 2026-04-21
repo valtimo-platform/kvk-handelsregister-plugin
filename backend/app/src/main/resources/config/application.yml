@@ -1,6 +1,6 @@
 spring:
   application:
-    name: plugin-sandbox-application
+    name: kvk-handelsregister-plugin-application
   profiles:
     active: dev
   jackson:

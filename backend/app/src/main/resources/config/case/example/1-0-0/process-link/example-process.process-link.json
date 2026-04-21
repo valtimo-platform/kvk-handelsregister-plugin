@@ -13,7 +13,7 @@
         "pluginActionDefinitionKey": "kvk-handelsregister-action",
         "pluginConfigurationId": "4ac9a49f-4aeb-4f91-86d9-853fd95a1b33",
         "actionProperties": {
-            "message": "Hello from the sample plugin!"
+            "message": "Hello from the kvk-handelsregister plugin!"
         }
     }
 ]

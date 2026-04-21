@@ -10,7 +10,7 @@
         },
         "apiResult": {
             "type": "string",
-            "description": "Result from the sample plugin Time API call"
+            "description": "Result from the Kvk Handelsregister plugin Time API call"
         },
         "message": {
             "type": "string",
