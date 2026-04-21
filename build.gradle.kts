@@ -89,7 +89,7 @@ subprojects {
         if (Os.isFamily(FAMILY_MAC)) {
             println("Configure docker compose for macOs")
             dockerCompose {
-                projectNamePrefix = "sample-plugin-"
+                projectNamePrefix = "kvk-handelsregister-"
                 setProjectName("${rootProject.name}-${project.name}")
                 executable = "/usr/local/bin/docker-compose"
                 dockerExecutable = "/usr/local/bin/docker"
