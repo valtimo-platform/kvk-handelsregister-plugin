@@ -27,29 +27,24 @@ import org.springframework.context.annotation.Configuration
 @Configuration
 @EnableConfigurationProperties
 class HandelsregisterAutoConfiguration {
-
     @Bean
     fun handelsregisterService(
-        simpleKvkHandelsregisterClient: SimpleKvkHandelsregisterClient
-    ): KvkHandelsregisterService {
-        return KvkHandelsregisterService(
-            simpleKvkHandelsregisterClient
+        simpleKvkHandelsregisterClient: SimpleKvkHandelsregisterClient,
+    ): KvkHandelsregisterService =
+        KvkHandelsregisterService(
+            simpleKvkHandelsregisterClient,
         )
-    }
 
     @Bean
     fun kvkPluginFactory(
         pluginService: PluginService,
-        kvkHandelsregisterService: KvkHandelsregisterService
-    ): KvkHandelsregisterPluginFactory {
-        return KvkHandelsregisterPluginFactory(
+        kvkHandelsregisterService: KvkHandelsregisterService,
+    ): KvkHandelsregisterPluginFactory =
+        KvkHandelsregisterPluginFactory(
             pluginService,
-            kvkHandelsregisterService
+            kvkHandelsregisterService,
         )
-    }
 
     @Bean
-    fun simpleKvkClient(): SimpleKvkHandelsregisterClient {
-        return SimpleKvkHandelsregisterClient()
-    }
+    fun simpleKvkClient(): SimpleKvkHandelsregisterClient = SimpleKvkHandelsregisterClient()
 }

@@ -6,10 +6,12 @@ import com.ritense.valtimo.kvk.model.ZoekenDto
 import javassist.NotFoundException
 
 class KvkHandelsregisterService(
-    private val kvkHandelsregisterClient: SimpleKvkHandelsregisterClient
+    private val kvkHandelsregisterClient: SimpleKvkHandelsregisterClient,
 ) {
-
-    fun zoeken(clientConfig: KvkHandelsregisterClientConfig, kvkNumber: String): List<ZoekenDto> {
+    fun zoeken(
+        clientConfig: KvkHandelsregisterClientConfig,
+        kvkNumber: String,
+    ): List<ZoekenDto> {
         val result = kvkHandelsregisterClient.search(kvkNumber, clientConfig)
 
         return if (result?.resultaten?.isNotEmpty() == true) {
@@ -17,7 +19,7 @@ class KvkHandelsregisterService(
                 ZoekenDto(
                     it.kvkNummer,
                     it.naam,
-                    it.type
+                    it.type,
                 )
             }
         } else {

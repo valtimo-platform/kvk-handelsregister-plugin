@@ -6,12 +6,10 @@ import com.ritense.valtimo.kvk.service.KvkHandelsregisterService
 
 class KvkHandelsregisterPluginFactory(
     pluginService: PluginService,
-    private val kvkHandelsregisterService: KvkHandelsregisterService
+    private val kvkHandelsregisterService: KvkHandelsregisterService,
 ) : PluginFactory<KvkHandelsregisterPlugin>(pluginService) {
-
-    override fun create(): KvkHandelsregisterPlugin {
-        return KvkHandelsregisterPlugin(
-            kvkHandelsregisterService
+    override fun create(): KvkHandelsregisterPlugin =
+        KvkHandelsregisterPlugin(
+            kvkHandelsregisterService,
         )
-    }
 }

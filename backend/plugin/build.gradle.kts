@@ -32,7 +32,6 @@ dockerCompose {
     }
 }
 
-
 dependencies {
     compileOnly("com.ritense.valtimo:contract")
     compileOnly("com.ritense.valtimo:core")
@@ -69,7 +68,6 @@ dependencies {
 
     testImplementation("org.jetbrains.kotlin:kotlin-test")
     testImplementation("org.jetbrains.kotlin:kotlin-test-junit5")
-
 }
 
 apply(from = "gradle/publishing.gradle")

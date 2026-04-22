@@ -17,13 +17,12 @@
 package com.ritense.plugin.sandbox
 
 import io.github.oshai.kotlinlogging.KotlinLogging
-import java.net.InetAddress
 import org.springframework.boot.autoconfigure.SpringBootApplication
 import org.springframework.boot.runApplication
+import java.net.InetAddress
 
 @SpringBootApplication(scanBasePackages = ["com.ritense.*"])
 class PluginApplication {
-
     companion object {
         private val logger = KotlinLogging.logger {}
 
@@ -38,11 +37,12 @@ class PluginApplication {
                 |    Application '${app.environment.getProperty("spring.application.name")}' is running!
                 |    Active profile(s): [${app.environment.getProperty("spring.profiles.active")}].
                 |    Local URL: [http://127.0.0.1:${app.environment.getProperty("server.port")}].
-                |    External URL: [http://${InetAddress.getLocalHost().hostAddress}:${app.environment.getProperty("server.port")}]
+                |    External URL: [http://${InetAddress.getLocalHost().hostAddress}:${app.environment.getProperty(
+                    "server.port",
+                )}]
                 ----------------------------------------------------------
                 """.trimIndent()
             }
         }
     }
-
 }

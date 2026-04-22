@@ -53,9 +53,9 @@ publishing {
                     }
                 }
                 scm {
-                    connection = "git@github.com:generiekzaakafhandelcomponent/gzac-plugin-template.git"
-                    developerConnection = "git@github.com:generiekzaakafhandelcomponent/gzac-plugin-template.git"
-                    url = "https://github.com/generiekzaakafhandelcomponent/gzac-plugin-template"
+                    connection = "git@github.com:valtimo-platform/kvk-handelsregister-plugin.git"
+                    developerConnection = "git@github.com:valtimo-platform/kvk-handelsregister-plugin.git"
+                    url = "https://github.com/valtimo-platform/kvk-handelsregister-plugin"
                 }
             }
 

@@ -12,7 +12,7 @@ data class ZoekenResponse(
     @JsonProperty("resultaten")
     val resultaten: List<Resultaat>,
     @JsonProperty("links")
-    val links: List<Link>
+    val links: List<Link>,
 )
 
 data class Resultaat(
@@ -27,19 +27,19 @@ data class Resultaat(
     @JsonProperty("vestigingsnummer")
     val vestigingsnummer: String? = null,
     @JsonProperty("adres")
-    val adres: Adres? = null
+    val adres: Adres? = null,
 )
 
 data class Link(
     @JsonProperty("rel")
     val rel: String,
     @JsonProperty("href")
-    val href: String
+    val href: String,
 )
 
 data class Adres(
     @JsonProperty("binnenlandsAdres")
-    val binnenlandsAdres: BinnenlandsAdres
+    val binnenlandsAdres: BinnenlandsAdres,
 )
 
 data class BinnenlandsAdres(
@@ -48,6 +48,5 @@ data class BinnenlandsAdres(
     @JsonProperty("straatnaam")
     val straatnaam: String,
     @JsonProperty("plaats")
-    val plaats: String
+    val plaats: String,
 )
-
