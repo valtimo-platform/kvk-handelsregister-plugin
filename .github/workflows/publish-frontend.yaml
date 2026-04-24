@@ -33,7 +33,7 @@ jobs:
         id: changed-files
         with:
           dir_names: 'true'
-          dir_names_max_depth: '2'
+          dir_names_max_depth: '1'
           matrix: 'true'
           path: 'frontend/projects'
         uses: tj-actions/changed-files@v45
@@ -65,7 +65,9 @@ jobs:
         working-directory: frontend
 
       - name: Publish
-        run: npm publish ${{ matrix.value }}/dist --access public
+        run: |
+          PUBLISH_PATH=$(node -e "const p=require('path'); const d=require('./projects/${{ matrix.value }}/ng-package.json').dest; console.log(p.normalize(p.join('projects/${{ matrix.value }}', d)))")
+          npm publish "$PUBLISH_PATH" --access public
         working-directory: frontend
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPMJS_SECRET }}
