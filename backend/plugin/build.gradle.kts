@@ -28,7 +28,7 @@ dockerCompose {
     setProjectName("kvk-handelsregister")
     isRequiredBy(project.tasks.integrationTesting)
     tasks.integrationTesting {
-        useComposeFiles.addAll("$rootDir/docker-resources/docker-compose-base-test.yml", "docker-compose-override.yml")
+        useComposeFiles.addAll("$rootDir/docker-resources/docker-compose-base-test.yml")
     }
 }
 
@@ -53,21 +53,20 @@ dependencies {
     implementation("com.auth0:java-jwt:$auth0JavaJwtVersion")
 
     // Testing
-    testImplementation("com.fasterxml.jackson.core:jackson-databind:$jacksonVersion")
-    testImplementation("com.fasterxml.jackson.core:jackson-annotations:$jacksonVersion")
-    testImplementation("com.fasterxml.jackson.core:jackson-core:$jacksonVersion")
-    testImplementation("org.junit.jupiter:junit-jupiter-migrationsupport:$junitJupiterVersion")
-    testImplementation("org.assertj:assertj-core")
-    testImplementation("org.mockito:mockito-core")
-    testImplementation("org.hamcrest:hamcrest-library")
-    testImplementation("com.jayway.jsonpath:json-path:$jsonPathVersion")
-    testImplementation("org.mockito.kotlin:mockito-kotlin:$mockitoKotlinVersion")
+    testImplementation("com.ritense.valtimo:building-block")
+    testImplementation("com.ritense.valtimo:contract")
+    testImplementation("com.ritense.valtimo:core")
+    testImplementation("com.ritense.valtimo:plugin")
+    testImplementation("com.ritense.valtimo:temporary-resource-storage")
+    testImplementation("com.ritense.valtimo:test-utils-common")
 
-    testImplementation("com.squareup.okhttp3:mockwebserver:$okhttpVersion")
-    testImplementation("com.squareup.okhttp3:okhttp:$okhttpVersion")
+    testImplementation("org.springframework.boot:spring-boot-starter-test")
 
-    testImplementation("org.jetbrains.kotlin:kotlin-test")
-    testImplementation("org.jetbrains.kotlin:kotlin-test-junit5")
+    testImplementation("org.postgresql:postgresql")
+
+    testImplementation("com.ritense.valtimo:plugin-valtimo")
+    testImplementation("com.ritense.valtimo:value-resolver")
+    testImplementation("com.ritense.valtimo:case")
 }
 
 apply(from = "gradle/publishing.gradle")

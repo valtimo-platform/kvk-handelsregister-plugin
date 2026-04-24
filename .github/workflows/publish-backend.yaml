@@ -36,13 +36,8 @@ jobs:
           dir_names_max_depth: '2'
           dir_names_exclude_current_dir: 'true'
           matrix: 'true'
-          files_ignore: |
-            backend/README.md
-            .github/**
-            frontend/**
-            docker-resources/**
-            gradle/**
-            backend/app/**
+          files: |
+            backend/plugin/**
         uses: tj-actions/changed-files@v45
       # NOTE: `since_last_remote_commit: true` is implied by default and falls back to the previous local commit.
 

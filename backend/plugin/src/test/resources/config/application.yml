@@ -3,7 +3,7 @@ spring:
     allow-bean-definition-overriding: true
   datasource:
     type: com.zaxxer.hikari.HikariDataSource
-    url: jdbc:postgresql://localhost:54342/kvk-handelsregister-test
+    url: jdbc:postgresql://localhost:54347/kvk-handelsregister-test
     username: test-user
     password: password
     driver-class-name: org.postgresql.Driver
@@ -32,3 +32,12 @@ spring-actuator:
 valtimo:
   plugin:
     encryption-secret: "abcdefghijklmnop"
+
+operaton:
+  bpm:
+    database:
+      type: postgres
+    generic-properties:
+      properties:
+        deploy-changed-only: true
+        enforceHistoryTimeToLive: false
