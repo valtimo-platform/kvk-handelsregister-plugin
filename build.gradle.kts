@@ -96,12 +96,6 @@ subprojects {
             }
         }
 
-        tasks.test {
-            useJUnitPlatform {
-                excludeTags("integration")
-            }
-        }
-
         tasks.getByName<BootJar>("bootJar") {
             enabled = false
         }

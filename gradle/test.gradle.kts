@@ -14,14 +14,9 @@
  * limitations under the License.
  */
 
-tasks.register<Test>("integrationTesting") {
-    description = "Integration tests"
-    group = "verification"
+tasks.named<Test>("test") {
     systemProperty("spring.profiles.include", "inttest,postgresql")
-    useJUnitPlatform {
-        includeTags("integration")
-    }
-    mustRunAfter("check")
+    useJUnitPlatform()
     doLast {
         "composeDownForced"
     }
