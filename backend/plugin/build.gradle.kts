@@ -26,8 +26,8 @@ val okhttpVersion: String by project
 
 dockerCompose {
     setProjectName("kvk-handelsregister")
-    isRequiredBy(project.tasks.integrationTesting)
-    tasks.integrationTesting {
+    isRequiredBy(project.tasks.test)
+    tasks.test {
         useComposeFiles.addAll("$rootDir/docker-resources/docker-compose-base-test.yml")
     }
 }

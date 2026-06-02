@@ -79,17 +79,8 @@ jobs:
         env:
           CHANGED_DIR: ${{ matrix.value }}
 
-      - id: gradleIntegrationTestTaskAlize
-        name: Construct Gradle integration test task name from matrix variant
-        run: CHANGED_DIR=${{ matrix.value }}; echo "TASK_NAME=$(echo :$CHANGED_DIR:integrationTesting | sed -e 's/\//:/g')">>${GITHUB_OUTPUT}
-        env:
-          CHANGED_DIR: ${{ matrix.value }}
-
       - name: Test
         run: ./gradlew ${{ steps.gradleTestTaskAlize.outputs.TASK_NAME }}
-
-      - name: Integration Test
-        run: ./gradlew ${{ steps.gradleIntegrationTestTaskAlize.outputs.TASK_NAME }}
 
       - name: Publish
         run: ./gradlew ${{ steps.gradleTaskAlize.outputs.TASK_NAME }}
