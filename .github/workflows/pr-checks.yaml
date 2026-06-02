@@ -6,6 +6,9 @@ on:
       - main
       - v12
 
+permissions:
+  contents: read
+
 jobs:
   backend-test:
     name: Backend tests
