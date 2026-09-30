@@ -2,6 +2,10 @@
 
 Overzicht van wijzigingen per versie van de KVK Handelsregister-plugin.
 
+## 1.2.2
+
+Ondersteuning voor Valtimo 13.48.0.
+
 ## 1.2.1
 
 Valtimo bijgewerkt naar versie 13.41.0.
